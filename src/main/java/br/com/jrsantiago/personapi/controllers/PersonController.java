@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonController {
     
     @GetMapping
-    public void getPeople() {
+    public String getPeople() {
         return "API REST Person";
     }
 
