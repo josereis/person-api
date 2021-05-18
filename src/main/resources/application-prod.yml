@@ -1,0 +1,16 @@
+# Dados de configuração do Banco de Dados
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/manager-cursist
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: jrrs031294
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
