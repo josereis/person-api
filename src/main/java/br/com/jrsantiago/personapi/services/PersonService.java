@@ -3,6 +3,7 @@ package br.com.jrsantiago.personapi.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.jrsantiago.personapi.dto.MessageResponseDTO;
 import br.com.jrsantiago.personapi.models.Person;
 import br.com.jrsantiago.personapi.repository.PersonRepositry;
 
@@ -15,8 +16,10 @@ public class PersonService {
         this.personRepositry = personRepositry;
     }
 
-    public Person save(Person person) {
-        return personRepositry.save(person);
+    public MessageResponseDTO save(Person person) {
+        Person savedPerson = personRepositry.save(person);
+
+        return MessageResponseDTO.builder().message("Pessoa criada com ID " + savedPerson.getId()).build();
     }
 
 }
