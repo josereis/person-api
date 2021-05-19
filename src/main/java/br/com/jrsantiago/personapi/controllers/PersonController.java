@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.jrsantiago.personapi.dto.MessageResponseDTO;
+import br.com.jrsantiago.personapi.dto.response.MessageResponseDTO;
 import br.com.jrsantiago.personapi.models.Person;
 import br.com.jrsantiago.personapi.services.PersonService;
 
@@ -21,7 +21,7 @@ public class PersonController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public MessageResponseDTO create(@RequestBody Person person) {
-        return personService.save(person); // comentario
+        return personService.save(person);
     }
 
 }
