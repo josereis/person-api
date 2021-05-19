@@ -1,5 +1,7 @@
 package br.com.jrsantiago.personapi.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.jrsantiago.personapi.dto.response.MessageResponseDTO;
@@ -18,6 +20,10 @@ public class PersonService {
     public MessageResponseDTO save(Person person) {
         personRepositry.save(person);
         return MessageResponseDTO.builder().message("Pessoa criada com ID").build();
+    }
+
+    public List<Person> findAll() {
+        return personRepositry.findAll();
     }
 
 }
